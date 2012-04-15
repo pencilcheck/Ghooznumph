@@ -36,6 +36,9 @@
  * 
  * Total number of vertices = (nx + 1) * (ny + 1). 
  */
+
+@class Isgl3dUVMap;
+
 @interface Isgl3dTerrainMesh : Isgl3dPrimitive {
 	
 @private
@@ -47,6 +50,8 @@
 	int _nz;
 	
 	unsigned int _channel;
+    
+    Isgl3dUVMap * _uvMap;
 	
 	NSString * _terrainDataFile;
 }
@@ -61,7 +66,7 @@
  * @param nx The number of segments along the x-axis.
  * @param nz The number of segments along the z-axis.
  */
-+ (id)meshWithTerrainDataFile:(NSString *)terrainDataFile channel:(unsigned int)channel width:(float)width depth:(float)depth height:(float)height nx:(int)nx nz:(int)nz;
++ (id)meshWithTerrainDataFile:(NSString *)terrainDataFile channel:(unsigned int)channel width:(float)width depth:(float)depth height:(float)height nx:(int)nx nz:(int)nz uvMap:(Isgl3dUVMap *)uvMap;
 
 /**
  * Initialises the Isgl3dTerrainMesh with a specified geometry and terrain data file.
@@ -73,6 +78,6 @@
  * @param nx The number of segments along the x-axis.
  * @param nz The number of segments along the z-axis.
  */
-- (id)initWithTerrainDataFile:(NSString *)terrainDataFile channel:(unsigned int)channel width:(float)width depth:(float)depth height:(float)height nx:(int)nx nz:(int)nz;
+- (id)initWithTerrainDataFile:(NSString *)terrainDataFile channel:(unsigned int)channel width:(float)width depth:(float)depth height:(float)height nx:(int)nx nz:(int)nz uvMap:(Isgl3dUVMap *)uvMap;
 
 @end
