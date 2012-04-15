@@ -27,6 +27,7 @@
 #import "Isgl3dFloatArray.h"
 #import "Isgl3dUShortArray.h"
 #import "Isgl3dLog.h"
+#import "Isgl3dUVMap.h"
 #import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIKit.h>
 
@@ -38,11 +39,11 @@
 
 @implementation Isgl3dTerrainMesh
 
-+ (id)meshWithTerrainDataFile:(NSString *)terrainDataFile channel:(unsigned int)channel width:(float)width depth:(float)depth height:(float)height nx:(int)nx nz:(int)nz {
-	return [[[self alloc] initWithTerrainDataFile:terrainDataFile channel:channel width:width depth:depth height:height nx:nx nz:nz] autorelease];
++ (id)meshWithTerrainDataFile:(NSString *)terrainDataFile channel:(unsigned int)channel width:(float)width depth:(float)depth height:(float)height nx:(int)nx nz:(int)nz uvMap:(Isgl3dUVMap *)uvMap {
+	return [[[self alloc] initWithTerrainDataFile:terrainDataFile channel:channel width:width depth:depth height:height nx:nx nz:nz uvMap:uvMap] autorelease];
 }
 
-- (id)initWithTerrainDataFile:(NSString *)terrainDataFile channel:(unsigned int)channel width:(float)width depth:(float)depth height:(float)height nx:(int)nx nz:(int)nz {
+- (id)initWithTerrainDataFile:(NSString *)terrainDataFile channel:(unsigned int)channel width:(float)width depth:(float)depth height:(float)height nx:(int)nx nz:(int)nz uvMap:(Isgl3dUVMap *)uvMap {
 	if ((self = [super init])) {
 		_terrainDataFile = [terrainDataFile retain];
 		_channel = channel;
@@ -52,6 +53,12 @@
 		_height = height;
 		_nx = nx;
 		_nz = nz;
+        
+        if (uvMap) {
+			_uvMap = [uvMap retain];
+		} else {
+			_uvMap = [Isgl3dUVMap standardUVMap];
+		}
 		
 		[self constructVBOData];
 	}

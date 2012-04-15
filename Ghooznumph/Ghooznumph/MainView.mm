@@ -12,6 +12,8 @@
 #import "Isgl3dMotionState.h"
 #import "CameraController.h"
 
+#import "Isgl3dUVMap.h"
+
 #include "btBulletDynamicsCommon.h"
 #include "btBox2dShape.h"
 #include "btHeightfieldTerrainShape.h"
@@ -32,7 +34,7 @@
 		_physicsObjects = [[NSMutableArray alloc] init];
 		_timeInterval = 0;
 		
-		// Create and configure touch-screen camera controller
+		// Create and configure touch-screen camera controller 
         Isgl3dNodeCamera *camera = (Isgl3dNodeCamera *)self.defaultCamera;
         
 		_cameraController = [[CameraController alloc] initWithNodeCamera:camera andView:self];
@@ -54,22 +56,24 @@
 		[self.scene addChild:_physicsWorld];
         
 		// Create terrain node
-		Isgl3dTextureMaterial * textureMaterial = [Isgl3dTextureMaterial materialWithTextureFile:@"wood.png" shininess:0 precision:Isgl3dTexturePrecisionMedium repeatX:NO repeatY:NO];
-		Isgl3dTerrainMesh * terrainMesh = [Isgl3dTerrainMesh meshWithTerrainDataFile:@"world.jpeg" channel:2 width:32 depth:64 height:10 nx:32 nz:32];
+        Isgl3dUVMap *terrainUVMap = [Isgl3dUVMap uvMapWithUA:0.0 vA:0.0 uB:1.0 vB:0.0 uC:0.0 vC:1.0];
+        
+		Isgl3dTextureMaterial * textureMaterial = [Isgl3dTextureMaterial materialWithTextureFile:@"sand7.jpg" shininess:0 precision:Isgl3dTexturePrecisionMedium repeatX:YES repeatY:YES];
+		Isgl3dTerrainMesh * terrainMesh = [Isgl3dTerrainMesh meshWithTerrainDataFile:@"height1.png" channel:2 width:128 depth:128 height:10 nx:32 nz:32 uvMap:terrainUVMap];
 		_terrain = [_physicsWorld createNodeWithMesh:terrainMesh andMaterial:textureMaterial];
         
 		// Create terrain physics object
-		btCollisionShape * terrainShape = [self createTerrainShapeFromFile:@"world.jpeg" width:32 depth:64 nx:64 ny:64 channel:2 height:10];
+		btCollisionShape * terrainShape = [self createTerrainShapeFromFile:@"height1.png" width:128 depth:128 nx:64 ny:64 channel:2 height:10];
 		[self createPhysicsObject:_terrain shape:terrainShape mass:0 restitution:0.6 isFalling:NO];
         
 		// Create elements for falling spheres
-		_beachBallMaterial = [[Isgl3dTextureMaterial alloc] initWithTextureFile:@"BeachBall.png" shininess:0.9 precision:Isgl3dTexturePrecisionMedium repeatX:NO repeatY:NO];
-		float radius = 1.0;
-		_sphereMesh = [[Isgl3dSphere alloc] initWithGeometry:radius longs:16 lats:16];
+		_beachBallMaterial = [[Isgl3dTextureMaterial alloc] initWithTextureFile:@"water2.png" shininess:0.9 precision:Isgl3dTexturePrecisionMedium repeatX:NO repeatY:NO];
+		float radius = 0.5;
+		_sphereMesh = [[Isgl3dSphere alloc] initWithGeometry:radius longs:32 lats:32];
 		_spheresNode = [[_physicsWorld createNode] retain];
         
 		// Add light
-		Isgl3dLight * light  = [Isgl3dLight lightWithHexColor:@"FFFFFF" diffuseColor:@"FFFFFF" specularColor:@"FFFFFF" attenuation:0.002];
+		Isgl3dLight *light  = [Isgl3dLight lightWithHexColor:@"FFFFFF" diffuseColor:@"FFFFFF" specularColor:@"FFFFFF" attenuation:0.002];
 		[light setDirection:-1 y:-2 z:1];
 		[self.scene addChild:light];	
         
@@ -162,7 +166,7 @@
     
 	// Create array of heights
 	unsigned int heightDataNx = nx + 1;
-	unsigned int heightDataNy = ny + 1;
+	unsigned int heightDataNy = ny + 1;		
 	
 	_terrainHeightData = (float *)malloc(heightDataNx * heightDataNy * sizeof(float));
 	

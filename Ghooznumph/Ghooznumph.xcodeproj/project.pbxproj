@@ -723,6 +723,16 @@
 		3DC13AB31521C006007E550E /* wood.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC13A801521C006007E550E /* wood.png */; };
 		3DC13AB41521C006007E550E /* Shader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 3DC13A821521C006007E550E /* Shader.fsh */; };
 		3DC13AB51521C006007E550E /* Shader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = 3DC13A831521C006007E550E /* Shader.vsh */; };
+		C68417D3153AAC8000407DCE /* water1.png in Resources */ = {isa = PBXBuildFile; fileRef = C68417D1153AAC8000407DCE /* water1.png */; };
+		C68417D4153AAC8000407DCE /* water2.png in Resources */ = {isa = PBXBuildFile; fileRef = C68417D2153AAC8000407DCE /* water2.png */; };
+		C68417D9153AB0AB00407DCE /* sand1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C68417D6153AB0AA00407DCE /* sand1.jpg */; };
+		C68417DA153AB0AB00407DCE /* sand2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C68417D7153AB0AA00407DCE /* sand2.jpg */; };
+		C68417DB153AB0AB00407DCE /* sand3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C68417D8153AB0AA00407DCE /* sand3.jpg */; };
+		C6841801153ACA2F00407DCE /* height1.png in Resources */ = {isa = PBXBuildFile; fileRef = C68417FF153ACA2F00407DCE /* height1.png */; };
+		C6841802153ACA2F00407DCE /* sand4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C6841800153ACA2F00407DCE /* sand4.jpg */; };
+		C6C552BB153AE98A00522D15 /* sand5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C6C552BA153AE98A00522D15 /* sand5.jpg */; };
+		C6C552BE153AEAF100522D15 /* sand6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C6C552BD153AEAF100522D15 /* sand6.jpg */; };
+		C6C552C0153AEB7400522D15 /* sand7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C6C552BF153AEB7400522D15 /* sand7.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1465,6 +1475,16 @@
 		3DC13A801521C006007E550E /* wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood.png; sourceTree = "<group>"; };
 		3DC13A821521C006007E550E /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
 		3DC13A831521C006007E550E /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
+		C68417D1153AAC8000407DCE /* water1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water1.png; sourceTree = "<group>"; };
+		C68417D2153AAC8000407DCE /* water2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water2.png; sourceTree = "<group>"; };
+		C68417D6153AB0AA00407DCE /* sand1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sand1.jpg; sourceTree = "<group>"; };
+		C68417D7153AB0AA00407DCE /* sand2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sand2.jpg; sourceTree = "<group>"; };
+		C68417D8153AB0AA00407DCE /* sand3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sand3.jpg; sourceTree = "<group>"; };
+		C68417FF153ACA2F00407DCE /* height1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = height1.png; sourceTree = "<group>"; };
+		C6841800153ACA2F00407DCE /* sand4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sand4.jpg; sourceTree = "<group>"; };
+		C6C552BA153AE98A00522D15 /* sand5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sand5.jpg; sourceTree = "<group>"; };
+		C6C552BD153AEAF100522D15 /* sand6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sand6.jpg; sourceTree = "<group>"; };
+		C6C552BF153AEB7400522D15 /* sand7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sand7.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2577,6 +2597,16 @@
 		3DC13A501521C006007E550E /* images */ = {
 			isa = PBXGroup;
 			children = (
+				C6C552BF153AEB7400522D15 /* sand7.jpg */,
+				C6C552BD153AEAF100522D15 /* sand6.jpg */,
+				C6C552BA153AE98A00522D15 /* sand5.jpg */,
+				C68417FF153ACA2F00407DCE /* height1.png */,
+				C6841800153ACA2F00407DCE /* sand4.jpg */,
+				C68417D6153AB0AA00407DCE /* sand1.jpg */,
+				C68417D7153AB0AA00407DCE /* sand2.jpg */,
+				C68417D8153AB0AA00407DCE /* sand3.jpg */,
+				C68417D1153AAC8000407DCE /* water1.png */,
+				C68417D2153AAC8000407DCE /* water2.png */,
 				3D9C8D7A1524881F0003A686 /* world.jpeg */,
 				3D9C8D771524870E0003A686 /* randomheight.jpeg */,
 				3DC13A511521C006007E550E /* angle.png */,
@@ -3161,6 +3191,16 @@
 				3DC13AB31521C006007E550E /* wood.png in Resources */,
 				3D9C8D781524870E0003A686 /* randomheight.jpeg in Resources */,
 				3D9C8D7B1524881F0003A686 /* world.jpeg in Resources */,
+				C68417D3153AAC8000407DCE /* water1.png in Resources */,
+				C68417D4153AAC8000407DCE /* water2.png in Resources */,
+				C68417D9153AB0AB00407DCE /* sand1.jpg in Resources */,
+				C68417DA153AB0AB00407DCE /* sand2.jpg in Resources */,
+				C68417DB153AB0AB00407DCE /* sand3.jpg in Resources */,
+				C6841801153ACA2F00407DCE /* height1.png in Resources */,
+				C6841802153ACA2F00407DCE /* sand4.jpg in Resources */,
+				C6C552BB153AE98A00522D15 /* sand5.jpg in Resources */,
+				C6C552BE153AEAF100522D15 /* sand6.jpg in Resources */,
+				C6C552C0153AEB7400522D15 /* sand7.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
